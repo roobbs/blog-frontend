@@ -1,2 +1,3 @@
-# blog-frontend
-This is the frontend repository that uses my blog-api repo 
+# Blog Frontend
+
+This app fetches all info from my blog-api app
