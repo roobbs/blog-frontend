@@ -1,0 +1,64 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@900;900&display=swap"); */
+
+.header {
+  color: black;
+  position: relative;
+}
+.header ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+.header1 {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c8c8c8;
+  padding: 0.3rem 8rem;
+}
+.header2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e9e9e9;
+  padding: 1rem 10rem;
+  border: 1px solid black;
+}
+.headerIcon {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  color: black;
+}
+.headerIcon:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 149, 255);
+}
+
+.ulButtons li .userButton {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 15px;
+  border: 1px solid transparent;
+  border-color: black;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.ulButtons li .userButton:hover {
+  color: white;
+  background-color: rgb(57, 173, 255);
+  border-color: rgb(0, 51, 254);
+}
+.headerBlog {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
