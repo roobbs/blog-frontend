@@ -11,7 +11,7 @@ function Header() {
     <header className="header">
       <div className="header1">
         <div style={{ display: "flex ", gap: 10, alignItems: "center" }}>
-          <IoGitMergeOutline />
+          <IoGitMergeOutline color="#85d6b1" />
           <div>roobbs</div>
         </div>
         <ul>

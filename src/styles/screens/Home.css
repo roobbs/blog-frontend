@@ -1,0 +1,10 @@
+.homeContainer {
+  /* background-color: rgb(59, 31, 31); */
+  padding: 2rem 5rem;
+}
+.articles {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+}

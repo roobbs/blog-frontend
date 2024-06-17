@@ -18,16 +18,17 @@
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
-  background-color: #0d0d0d;
+  background-color: #000e22;
   padding: 0.3rem 8rem;
+  border-bottom: 1px solid rgb(172, 172, 172);
 }
 .header2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #171717;
+  background-color: #06122a;
   padding: 1rem 10rem;
-  border: 1px solid black;
+  border-bottom: 1px solid rgb(93, 93, 93);
 }
 .headerIcon {
   display: flex;
@@ -40,23 +41,23 @@
 }
 .headerIcon:hover {
   /* color: rgb(255, 255, 255); */
-  background-color: #33453d;
-  border-color: #00ffd1;
+  background-color: #173b56;
+  border-color: #0dc5ff;
 }
 
 .ulButtons li .userButton {
   color: white;
   text-decoration: none;
-  background-color: #33453d;
+  background-color: #173b56;
   padding: 5px 15px;
   border: 1px solid transparent;
-  border-color: #00ffd1;
+  border-color: #0dc5ff;
   border-radius: 8px;
   transition: all 0.3s;
 }
 .ulButtons li .userButton:hover {
   color: white;
-  background-color: #03a08e;
+  background-color: #0099ff;
   border-color: rgb(255, 255, 255);
 }
 .headerBlog {
