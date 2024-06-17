@@ -4,12 +4,16 @@ import { FaLinkedin } from "react-icons/fa";
 import { GoHomeFill } from "react-icons/go";
 import { MdWork } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { IoGitMergeOutline } from "react-icons/io5";
 
 function Header() {
   return (
     <header className="header">
       <div className="header1">
-        <div>roobbs</div>
+        <div style={{ display: "flex ", gap: 10, alignItems: "center" }}>
+          <IoGitMergeOutline />
+          <div>roobbs</div>
+        </div>
         <ul>
           <li title="Home">
             <Link to="/" className="headerIcon">
@@ -17,17 +21,29 @@ function Header() {
             </Link>
           </li>
           <li title="Github">
-            <a href="https://github.com/roobbs" className="headerIcon">
+            <a
+              href="https://github.com/roobbs"
+              target="_blank"
+              className="headerIcon"
+            >
               <FaGithub size={20} />
             </a>
           </li>
           <li title="Linkedin">
-            <a href="https://github.com/roobbs" className="headerIcon">
+            <a
+              href="https://linkedin.com/in/carlos-salmeron/"
+              target="_blank"
+              className="headerIcon"
+            >
               <FaLinkedin size={20} />
             </a>
           </li>
           <li title="Portfolio">
-            <a href="https://roobbs.vercel.app" className="headerIcon">
+            <a
+              href="https://roobbs.vercel.app"
+              target="_blank"
+              className="headerIcon"
+            >
               <MdWork size={20} />
             </a>
           </li>
