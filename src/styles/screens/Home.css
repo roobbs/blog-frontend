@@ -1,7 +1,5 @@
 .homeContainer {
   padding: 2rem 5rem;
-  scrollbar-width: thin;
-  scrollbar-color: blue black;
 }
 .articles {
   padding-top: 3rem;
