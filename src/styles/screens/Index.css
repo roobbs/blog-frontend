@@ -1,6 +1,9 @@
 .index {
   scrollbar-width: thin;
   scrollbar-color: blue black;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
 ::-webkit-scrollbar {

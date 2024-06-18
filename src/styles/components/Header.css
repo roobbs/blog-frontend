@@ -28,7 +28,7 @@
 }
 .header2 {
   position: absolute;
-  right: 0;
+  right: 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
