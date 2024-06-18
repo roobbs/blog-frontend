@@ -1,4 +1,4 @@
-import "../styles/Header.css";
+import "../styles/components/Header.css";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { GoHomeFill } from "react-icons/go";

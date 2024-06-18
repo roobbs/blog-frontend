@@ -6,9 +6,24 @@ function Home() {
     <main className="homeContainer">
       <div>See my most recent posts:</div>
       <div className="articles">
-        <ArticleCard></ArticleCard>
-        <ArticleCard></ArticleCard>
-        <ArticleCard></ArticleCard>
+        <ArticleCard
+          title="title"
+          text="text text text"
+          label="css"
+          date="date 3wqr k "
+        ></ArticleCard>
+        <ArticleCard
+          title="title"
+          text="text text text"
+          label="css"
+          date="date 3wqr k "
+        ></ArticleCard>
+        <ArticleCard
+          title="title"
+          text="text text text"
+          label="css"
+          date="date 3wqr k "
+        ></ArticleCard>
       </div>
     </main>
   );

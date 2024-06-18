@@ -6,24 +6,32 @@
   border: 1px solid rgb(120, 226, 255);
   padding: 1.5rem;
   border-radius: 15px;
-  background-color: #5173b733;
+  background-color: #12203b;
   transition: all 0.4s;
   cursor: pointer;
 }
 .articleCard:hover {
   border-color: white;
-  background-color: #050d24;
+  background-color: #009dff3d;
+  color: white;
 }
 .articleCard:hover .articleTitle {
-  border-color: #668cfc;
-  color: #668cfc;
+  color: #b5fff5;
+  border-color: #00c1fe;
+}
+.articleCard:hover .articleText {
+  color: white;
 }
 .articleTitle {
   text-align: center;
-  color: #77cfff;
+  color: #ffffff;
   font-size: 2rem;
   padding: 10px 1.5rem;
   border-bottom: 1px solid rgb(83, 197, 212);
+  letter-spacing: 2px;
+}
+.articleText {
+  color: #00c1fe;
 }
 .articleLabel {
   align-self: flex-start;
@@ -32,4 +40,11 @@
   border: 1px solid #00c1fe;
   border-radius: 10px;
   background-color: #050d24;
+}
+.dateContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
 }
