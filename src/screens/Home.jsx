@@ -24,6 +24,36 @@ function Home() {
           label="css"
           date="date 3wqr k "
         ></ArticleCard>
+        <ArticleCard
+          title="title"
+          text="text text text"
+          label="css"
+          date="date 3wqr k "
+        ></ArticleCard>
+        <ArticleCard
+          title="title"
+          text="text text text"
+          label="css"
+          date="date 3wqr k "
+        ></ArticleCard>
+        <ArticleCard
+          title="title"
+          text="text text text"
+          label="css"
+          date="date 3wqr k "
+        ></ArticleCard>
+        <ArticleCard
+          title="title"
+          text="text text text"
+          label="css"
+          date="date 3wqr k "
+        ></ArticleCard>
+        <ArticleCard
+          title="title"
+          text="text text text"
+          label="css"
+          date="date 3wqr k "
+        ></ArticleCard>
       </div>
     </main>
   );

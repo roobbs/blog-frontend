@@ -11,8 +11,11 @@ function Header() {
     <header className="header">
       <div className="header1">
         <div style={{ display: "flex ", gap: 10, alignItems: "center" }}>
-          <IoGitMergeOutline color="#85d6b1" />
-          <div>roobbs</div>
+          <IoGitMergeOutline color="#00cca7" size="20" />
+          <div style={{ display: "flex" }}>
+            roobbs{" "}
+            <div style={{ color: "#00cca7", fontWeight: "900" }}>.BLOG</div>
+          </div>
         </div>
         <ul>
           <li title="Home">
@@ -29,15 +32,6 @@ function Header() {
               <FaGithub size={20} />
             </a>
           </li>
-          <li title="Linkedin">
-            <a
-              href="https://linkedin.com/in/carlos-salmeron/"
-              target="_blank"
-              className="headerIcon"
-            >
-              <FaLinkedin size={20} />
-            </a>
-          </li>
           <li title="Portfolio">
             <a
               href="https://roobbs.vercel.app"
@@ -47,18 +41,20 @@ function Header() {
               <MdWork size={20} />
             </a>
           </li>
+          <li title="Linkedin">
+            <a
+              href="https://linkedin.com/in/carlos-salmeron/"
+              target="_blank"
+              className="headerIcon"
+            >
+              <FaLinkedin size={20} />
+            </a>
+          </li>
         </ul>
       </div>
 
       <div className="header2">
-        {/* <Link>BLOG</Link> */}
-        <div className="headerBlog">BLOG</div>
         <ul className="ulButtons">
-          <li>
-            <Link className="userButton" to="/">
-              All Posts
-            </Link>
-          </li>
           <li>
             <Link className="userButton" to="/login">
               Log In

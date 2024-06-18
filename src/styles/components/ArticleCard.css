@@ -3,43 +3,55 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  border: 1px solid rgb(120, 226, 255);
+  border: 1px solid rgb(197, 197, 197);
+  /* #12203b */
   padding: 1.5rem;
-  border-radius: 15px;
-  background-color: #12203b;
-  transition: all 0.4s;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: all 0.5s;
+  /* transition: transform 1s; */
   cursor: pointer;
+  min-width: 17rem;
 }
 .articleCard:hover {
-  border-color: white;
-  background-color: #009dff3d;
+  transform: scale(1.05);
+  border-color: #00c1fe;
+  background-color: #050d24;
   color: white;
 }
 .articleCard:hover .articleTitle {
-  color: #b5fff5;
-  border-color: #00c1fe;
+  color: white;
+  border-color: white;
 }
 .articleCard:hover .articleText {
   color: white;
 }
+.articleCard:hover .articleLabel {
+  background-color: white;
+  border-color: #ffffff;
+  background-color: #050d24;
+  color: white;
+}
 .articleTitle {
   text-align: center;
-  color: #ffffff;
+  color: #050d24;
   font-size: 2rem;
   padding: 10px 1.5rem;
-  border-bottom: 1px solid rgb(83, 197, 212);
+  border-bottom: 1px solid #050d24;
   letter-spacing: 2px;
 }
 .articleText {
-  color: #00c1fe;
+  color: #737373;
+  align-self: flex-start;
 }
 .articleLabel {
   align-self: flex-start;
   padding: 4px 12px;
   font-size: 0.8rem;
-  border: 1px solid #00c1fe;
+  border: 1px solid #050d24;
   border-radius: 10px;
-  background-color: #050d24;
+  color: #050d24;
+  /* background-color: #fcfcfc; */
 }
 .dateContainer {
   display: flex;
@@ -47,4 +59,13 @@
   gap: 1rem;
   width: 100%;
   justify-content: space-between;
+}
+.readtime {
+  font-size: 0.8rem;
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 500;
+  align-self: flex-start;
+  /* color: #575757; */
+  /* font-style: italic; */
 }

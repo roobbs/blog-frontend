@@ -1,8 +1,12 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@900;900&display=swap"); */
-
+.hola {
+  color: #cc5f00;
+}
 .header {
   color: rgb(255, 255, 255);
-  position: relative;
+  z-index: 2;
+  position: sticky;
+  top: 0;
 }
 .header ul {
   display: flex;
@@ -18,16 +22,19 @@
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
-  background-color: #000e22;
+  background-color: #000d17;
   padding: 0.3rem 8rem;
-  border-bottom: 1px solid rgb(172, 172, 172);
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
 .header2 {
+  position: absolute;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #06122a;
-  padding: 1rem 10rem;
+  padding: 1rem;
+  border-radius: 10px;
   border-bottom: 1px solid rgb(93, 93, 93);
 }
 .headerIcon {
@@ -40,7 +47,6 @@
   border: 1px solid transparent;
 }
 .headerIcon:hover {
-  /* color: rgb(255, 255, 255); */
   background-color: #173b56;
   border-color: #0dc5ff;
 }
@@ -48,17 +54,17 @@
 .ulButtons li .userButton {
   color: white;
   text-decoration: none;
-  background-color: #173b56;
+  background-color: rgb(255, 255, 255);
+  color: #173b56;
   padding: 5px 15px;
   border: 1px solid transparent;
-  border-color: #0dc5ff;
   border-radius: 8px;
   transition: all 0.3s;
 }
 .ulButtons li .userButton:hover {
   color: white;
-  background-color: #0099ff;
-  border-color: rgb(255, 255, 255);
+  background-color: #173b56;
+  border-color: #0dc5ff;
 }
 .headerBlog {
   font-size: 1.6rem;
