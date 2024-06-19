@@ -1,0 +1,26 @@
+.singlePostContainer {
+  /* background-color: black; */
+  padding: 3rem 5rem;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 3rem;
+}
+.postContainer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  background-color: white;
+  padding: 2rem 3.5rem;
+  border-radius: 5px;
+  box-shadow: 0.3rem 0.5rem 1rem grey;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.postTitle {
+  font-family: Inter;
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 1.5rem;
+}
