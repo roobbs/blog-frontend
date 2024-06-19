@@ -7,7 +7,10 @@ function ArticleCard({ id, title, text, label, date, readtime }) {
       <section className="articleCard">
         <div className="readtime">readtime: {readtime}</div>
         <div className="articleTitle">{title}</div>
-        <div className="articleText">{text}</div>
+        <div
+          className="articleText"
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></div>
         <div className="dateContainer">
           <div className="articleLabel">{label}</div>
           <div>{date}</div>
