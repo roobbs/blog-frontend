@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/screens/SignUp.css";
 import { useNavigate } from "react-router-dom";
+import { MdArrowRightAlt } from "react-icons/md";
 
 function SignUp() {
   const [message, setMessage] = useState(null);
@@ -48,6 +49,18 @@ function SignUp() {
     }
   };
 
+  const handleInvalid = (e) => {
+    if (e.target.name === "password") {
+      e.target.setCustomValidity(
+        "Password must contain at least one uppercase letter and one number."
+      );
+    }
+  };
+
+  const handleInput = (e) => {
+    e.target.setCustomValidity("");
+  };
+
   return (
     <main className="homeContainer">
       <div className="welcome">
@@ -61,6 +74,7 @@ function SignUp() {
               id="username"
               placeholder="username"
               required
+              minLength={4}
             />
           </div>
           <div className="formGroup">
@@ -71,6 +85,7 @@ function SignUp() {
               id="first_name"
               placeholder="First name"
               required
+              minLength={3}
             />
           </div>
           <div className="formGroup">
@@ -81,6 +96,7 @@ function SignUp() {
               id="last_name"
               placeholder="Last name"
               required
+              minLength={3}
             />
           </div>
           <div className="formGroup">
@@ -91,10 +107,14 @@ function SignUp() {
               id="password"
               placeholder="Pass123"
               required
+              minLength={6}
+              pattern="(?=.*[A-Z])(?=.*\d).{6,}"
+              onInvalid={handleInvalid}
+              onInput={handleInput}
             />
           </div>
           <button type="submit" className="sentButton">
-            Create account
+            Create account <MdArrowRightAlt size={30} color="#09cca9" />
           </button>
         </form>
         {message && <div className="successMessage">{message}</div>}

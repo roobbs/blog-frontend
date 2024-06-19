@@ -1,0 +1,67 @@
+.formTitle {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #00679e;
+}
+
+.blogForm {
+  background-color: #06122a;
+  color: white;
+  align-self: center;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  /* box-shadow: 1px 1px 10px #0dc5ff; */
+}
+.formGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+.formGroup label {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+.formGroup input {
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid rgb(255, 255, 255);
+}
+.formGroup input:focus {
+  color: white;
+  background-color: #002d3d;
+}
+.formGroup input:focus::placeholder {
+  color: white;
+}
+.formGroup input:valid {
+  color: white;
+  border-color: #0dc5ff;
+  background-color: #173b56;
+}
+
+.sentButton {
+  margin-top: 1.5rem;
+  align-self: center;
+  outline: none;
+  background-color: rgb(255, 255, 255);
+  color: #173b56;
+  font-size: 1.3rem;
+  padding: 5px 15px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.sentButton:hover {
+  color: white;
+  background-color: #173b56;
+  border-color: #0dc5ff;
+}
