@@ -1,3 +1,7 @@
+.linkCard {
+  text-decoration: none;
+  color: inherit;
+}
 .articleCard {
   display: flex;
   flex-direction: column;
