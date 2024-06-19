@@ -10,7 +10,14 @@ function Header() {
   return (
     <header className="header">
       <div className="header1">
-        <div style={{ display: "flex ", gap: 10, alignItems: "center" }}>
+        <div
+          style={{
+            display: "flex ",
+            gap: 10,
+            alignItems: "center",
+            fontSize: 22,
+          }}
+        >
           <IoGitMergeOutline color="#00cca7" size="20" />
           <div style={{ display: "flex" }}>
             roobbs{" "}
@@ -20,7 +27,7 @@ function Header() {
         <ul>
           <li title="Home">
             <Link to="/" className="headerIcon">
-              <GoHomeFill size={20} />
+              <GoHomeFill size={24} />
             </Link>
           </li>
           <li title="Github">
@@ -29,7 +36,7 @@ function Header() {
               target="_blank"
               className="headerIcon"
             >
-              <FaGithub size={20} />
+              <FaGithub size={24} />
             </a>
           </li>
           <li title="Portfolio">
@@ -38,7 +45,7 @@ function Header() {
               target="_blank"
               className="headerIcon"
             >
-              <MdWork size={20} />
+              <MdWork size={24} />
             </a>
           </li>
           <li title="Linkedin">
@@ -47,7 +54,7 @@ function Header() {
               target="_blank"
               className="headerIcon"
             >
-              <FaLinkedin size={20} />
+              <FaLinkedin size={24} />
             </a>
           </li>
         </ul>

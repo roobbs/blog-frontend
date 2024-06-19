@@ -30,7 +30,7 @@ function Home() {
           </Link>
           and discover more user features!
         </div>
-        <Link className="link">
+        <Link className="link" to="/posts">
           Start reading <MdArrowRightAlt size={30} color="#09cca9" />
         </Link>
       </div>

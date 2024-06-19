@@ -12,6 +12,7 @@
   /* transition: transform 1s; */
   cursor: pointer;
   min-width: 17rem;
+  max-width: 22rem;
 }
 .articleCard:hover {
   transform: scale(1.05);

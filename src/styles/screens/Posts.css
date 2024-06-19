@@ -1,0 +1,13 @@
+.postsContainer {
+  padding: 3rem 5rem;
+  /* padding-top: 3rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.postCardContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
