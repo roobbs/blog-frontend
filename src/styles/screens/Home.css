@@ -1,3 +1,9 @@
+.homeContainer {
+  padding: 2rem 15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 .welcome {
   background-color: white;
   padding: 4rem;

@@ -35,6 +35,7 @@ function Posts() {
           posts.map((post) => (
             <ArticleCard
               key={post._id}
+              id={post._id}
               title={post.title}
               text={post.text}
               readtime={post.readtime}
