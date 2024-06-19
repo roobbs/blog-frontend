@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/screens/PostDetail.css";
+import { Link } from "react-router-dom";
+import { format } from "date-fns";
+import { MdArrowRightAlt } from "react-icons/md";
 
 function PostDetail() {
   const { postId } = useParams();
@@ -33,16 +36,36 @@ function PostDetail() {
         {!post && <div>wait...</div>}
         {post && (
           <div className="postContainer">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                gap: "1rem",
+              }}
+            >
+              <div className="postReadtime">Readtime: {post.readtime}</div>
+              <div className="label">{post.label}</div>
+            </div>
             <div className="postTitle">{post.title}</div>
             <div dangerouslySetInnerHTML={{ __html: post.text }}></div>
             <div className="postAuthor">
               {post.author.first_name + " " + post.author.last_name}
             </div>
+            <div className="postDate">
+              {format(new Date(post.date), "dd-MMM-yyyy")}
+            </div>
           </div>
         )}
-        {comments.lenght && <div>There are comments</div>}
       </div>
-      <div>Hola, aqui van algunos otros posts</div>
+      <div className="postSidebar">
+        <Link to={"/posts"} className="postLink">
+          <div>See more posts</div>
+          <MdArrowRightAlt size={40} color="#09cca9" />
+        </Link>
+        <div>
+          {comments.lenght ? "There are comments" : "There are no comments yet"}
+        </div>
+      </div>
     </div>
   );
 }

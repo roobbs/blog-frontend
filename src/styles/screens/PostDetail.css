@@ -2,8 +2,9 @@
   /* background-color: black; */
   padding: 3rem 5rem;
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 5fr 1fr;
   gap: 3rem;
+  position: relative;
 }
 .postContainer {
   font-family: Arial, Helvetica, sans-serif;
@@ -20,7 +21,68 @@
 .postTitle {
   font-family: Inter;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
   padding: 1rem 1.5rem;
+  color: #004d90;
+  letter-spacing: 2px;
+}
+.postReadtime {
+  color: grey;
+  font-size: 1rem;
+  font-style: italic;
+}
+.label {
+  color: #0084ff;
+  border: 1px solid #0084ff;
+  /* cursor: cell; */
+  padding: 0 10px;
+  border-radius: 5px;
+}
+.postSidebar {
+  margin-top: 1rem;
+}
+.postAuthor {
+  align-self: flex-end;
+  font-style: italic;
+  color: #004d90;
+}
+.postDate {
+  align-self: flex-end;
+  font-weight: 600;
+}
+strong {
+  color: #004d90;
+}
+
+.postSidebar {
+  background-color: #002140;
+  color: white;
+  width: 100%;
+  height: fit-content;
+  padding: 2rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0.3rem 0.5rem 1rem grey;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 120px;
+}
+.postLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #004d90;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #002140;
+  background-color: #ffffff;
+  transition: all 0.3s;
+}
+.postLink:hover {
+  color: white;
+  background-color: #002b53;
+  border-color: #0084ff;
 }
