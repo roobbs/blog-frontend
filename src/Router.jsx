@@ -6,6 +6,7 @@ import Home from "./screens/Home";
 import Posts from "./screens/Posts";
 import PostDetail from "./screens/PostDetail";
 import SignUp from "./screens/Signup";
+import LogIn from "./screens/Login";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -18,6 +19,7 @@ export default function Router() {
         { path: "posts", element: <Posts /> },
         { path: "posts/:postId", element: <PostDetail /> },
         { path: "signup", element: <SignUp /> },
+        { path: "login", element: <LogIn /> },
       ],
     },
   ]);
