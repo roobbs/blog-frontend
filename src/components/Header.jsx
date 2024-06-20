@@ -5,8 +5,14 @@ import { GoHomeFill } from "react-icons/go";
 import { MdWork } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { IoGitMergeOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { UserContext } from "../App";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const { user, handleLogout } = useContext(UserContext);
+  const navigate = useNavigate();
+
   return (
     <header className="header">
       <div className="header1">
@@ -61,18 +67,32 @@ function Header() {
       </div>
 
       <div className="header2">
-        <ul className="ulButtons">
-          <li>
-            <Link className="userButton" to="/login">
-              Log In
-            </Link>
-          </li>
-          <li>
-            <Link className="userButton" to="/signup">
-              Sign Up
-            </Link>
-          </li>
-        </ul>
+        {user ? (
+          <ul className="ulButtons">
+            <li style={{ color: "#00cca7" }}>{user.username}</li>
+            <li>
+              <div
+                className="userButton"
+                onClick={() => handleLogout(navigate("/"))}
+              >
+                Log Out
+              </div>
+            </li>
+          </ul>
+        ) : (
+          <ul className="ulButtons">
+            <li>
+              <Link className="userButton" to="/login">
+                Log In
+              </Link>
+            </li>
+            <li>
+              <Link className="userButton" to="/signup">
+                Sign Up
+              </Link>
+            </li>
+          </ul>
+        )}
       </div>
     </header>
   );

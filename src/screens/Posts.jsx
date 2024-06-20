@@ -3,9 +3,12 @@ import "../styles/screens/Posts.css";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import ArticleCard from "../components/ArticleCard";
 import { format } from "date-fns";
+import { useContext } from "react";
+import { UserContext } from "../App";
 
 function Posts() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(false);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -26,10 +29,13 @@ function Posts() {
   return (
     <div className="postsContainer">
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        see my recent posts:
+        {user
+          ? `${user.first_name}, read my recent posts:`
+          : "See my recent posts:"}
         <IoIosArrowRoundForward size={35} color="#09cca9" />
       </div>
-      {posts.length <= 0 && <div>No hay posts que mostrar :/</div>}
+      {!posts && <div>wait ...</div>}
+      {posts.length === 0 && <div>No hay posts que mostrar :/ </div>}
       <div className="postCardContainer">
         {posts.length > 0 &&
           posts.map((post) => (

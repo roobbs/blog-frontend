@@ -1,7 +1,6 @@
 import "./styles/App.css";
 import Router from "./Router";
 import { useState, createContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext({
   user: false,
@@ -12,7 +11,6 @@ export const UserContext = createContext({
 
 function App() {
   const [user, setUser] = useState(false);
-  // const navigate = useNavigate();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("blogUser");
