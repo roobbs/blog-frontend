@@ -1,32 +1,37 @@
 import "./styles/App.css";
 import Router from "./Router";
 import { useState, createContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext({
   user: false,
   token: "",
   setUser: () => {},
-  setToken: () => {},
+  logOut: () => {},
 });
 
 function App() {
   const [user, setUser] = useState(false);
-  const [token, setToken] = useState(false);
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("blogUser");
-    const storedToken = localStorage.getItem("token");
 
-    if (storedUser && storedToken) {
+    if (storedUser) {
       setUser(JSON.parse(storedUser));
-      setToken(storedToken);
       console.log(storedUser);
-      console.log(storedToken);
     }
   }, []);
 
+  const handleLogout = (navigate) => {
+    setUser(false);
+    localStorage.removeItem("blogUser");
+    localStorage.removeItem("token");
+    navigate();
+  };
+
   return (
-    <UserContext.Provider value={{ user, token, setUser, setToken }}>
+    <UserContext.Provider value={{ user, setUser, handleLogout }}>
       <Router></Router>
     </UserContext.Provider>
   );

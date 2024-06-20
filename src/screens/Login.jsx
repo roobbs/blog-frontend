@@ -2,11 +2,14 @@ import { useState } from "react";
 import "../styles/screens/SignUp.css";
 import { useNavigate } from "react-router-dom";
 import { MdArrowRightAlt } from "react-icons/md";
+import { useContext } from "react";
+import { UserContext } from "../App";
 
 function LogIn() {
   const [message, setMessage] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,10 +37,11 @@ function LogIn() {
 
       if (result.success) {
         setMessage(result.msg);
+        setUser(result.user);
         setError(null);
         localStorage.setItem("token", result.token);
         localStorage.setItem("blogUser", JSON.stringify(result.user));
-        navigate("/posts");
+        navigate("/");
       } else if (!result.success) {
         setError(result.message);
       } else {
