@@ -38,7 +38,7 @@ function SignUp() {
         setMessage("User created successfully!");
         setError(null);
         localStorage.setItem("token", result.token);
-        localStorage.setItem("blogUser", result.user);
+        localStorage.setItem("blogUser", JSON.stringify(result.user));
         navigate("/posts");
       } else if (result.error.code === 11000) {
         setError(`El usuario "${formData.get("username")}" ya existe`);

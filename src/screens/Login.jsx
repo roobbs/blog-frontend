@@ -36,7 +36,7 @@ function LogIn() {
         setMessage(result.msg);
         setError(null);
         localStorage.setItem("token", result.token);
-        localStorage.setItem("blogUser", result.user);
+        localStorage.setItem("blogUser", JSON.stringify(result.user));
         navigate("/posts");
       } else if (!result.success) {
         setError(result.message);
