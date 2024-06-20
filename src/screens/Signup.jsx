@@ -34,17 +34,21 @@ function SignUp() {
       const result = await response.json();
       console.log(result);
 
-      if (response.ok) {
+      if (result.success) {
         setMessage("User created successfully!");
         setError(null);
         localStorage.setItem("token", result.token);
+        localStorage.setItem("blogUser", result.user);
         navigate("/posts");
+      } else if (result.error.code === 11000) {
+        setError(`El usuario "${formData.get("username")}" ya existe`);
       } else {
         setMessage(null);
-        setError(result.message || "Failed to create user");
+        setError(result.message || "Server error, failed to create user");
       }
     } catch (error) {
       setMessage(null);
+      console.log(error);
       setError("An error occurred. Please try again.");
     }
   };
@@ -113,12 +117,12 @@ function SignUp() {
               onInput={handleInput}
             />
           </div>
+          {error && <div className="errorMessage">° {error} :/</div>}
           <button type="submit" className="sentButton">
             Create account <MdArrowRightAlt size={30} color="#09cca9" />
           </button>
         </form>
         {message && <div className="successMessage">{message}</div>}
-        {error && <div className="errorMessage">{error}</div>}
       </div>
     </main>
   );

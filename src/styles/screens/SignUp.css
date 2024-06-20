@@ -65,3 +65,11 @@
   background-color: #173b56;
   border-color: #0dc5ff;
 }
+.errorMessage {
+  color: white;
+  font-size: 0.9rem;
+  background-color: rgb(215, 0, 0);
+  border-radius: 4px;
+  padding: 2px 10px;
+  align-self: center;
+}
