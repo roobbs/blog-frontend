@@ -4,12 +4,17 @@ import "../styles/screens/PostDetail.css";
 import { Link } from "react-router-dom";
 import { format } from "date-fns";
 import { MdArrowRightAlt } from "react-icons/md";
+import { UserContext } from "../App";
+import { useContext } from "react";
+import CommentModal from "../components/CommentModal";
 
 function PostDetail() {
   const { postId } = useParams();
   const [post, setPost] = useState(false);
   const [comments, setComments] = useState([]);
   const [error, setError] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     const fetchSinglePost = async () => {
@@ -27,7 +32,7 @@ function PostDetail() {
       }
     };
     fetchSinglePost();
-  }, [postId]);
+  }, [postId, showModal]);
 
   return (
     <div className="singlePostContainer">
@@ -62,10 +67,24 @@ function PostDetail() {
           <div>See more posts</div>
           <MdArrowRightAlt size={40} color="#09cca9" />
         </Link>
+        {user && (
+          <div
+            className="postLink"
+            style={{ cursor: "pointer" }}
+            onClick={() => setShowModal(true)}
+          >
+            <div>{user.first_name}, agrega un comenario! </div>
+            <MdArrowRightAlt size={40} color="#09cca9" />
+          </div>
+        )}
+
         <div>
           {comments.lenght ? "There are comments" : "There are no comments yet"}
         </div>
       </div>
+      {showModal && user && (
+        <CommentModal onClose={() => setShowModal(false)}></CommentModal>
+      )}
     </div>
   );
 }

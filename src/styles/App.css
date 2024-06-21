@@ -5,15 +5,15 @@
   flex-direction: column;
   position: relative;
 
-  scrollbar-width: thin;
-  scrollbar-color: blue black;
+  /* scrollbar-width: thin;
+  scrollbar-color: blue black; */
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: thin;
 }
 
-/* Establece los colores del scrollbar */
+/* 
 ::-webkit-scrollbar-track {
   background: black;
 }
@@ -22,4 +22,4 @@
   background-color: blue;
   border-radius: 6px;
   border: 3px solid black;
-}
+} */
