@@ -1,33 +1,34 @@
 import "../styles/components/CommentModal.css";
 import { useState } from "react";
 import { MdArrowRightAlt } from "react-icons/md";
-import { useContext } from "react";
-import { UserContext } from "../App";
-import { useNavigate } from "react-router-dom";
 import { IoMdCloseCircle } from "react-icons/io";
 
-function CommentModal({ onClose }) {
-  const [message, setMessage] = useState(null);
+// const token = localStorage.getItem("token");
+// console.log(token);
+
+function CommentModal({ onClose, postId }) {
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(localStorage.getItem("token"));
 
     const formData = new FormData(e.target);
     const data = {
-      username: formData.get("username"),
-      password: formData.get("password"),
+      message: formData.get("message"),
+      postId: postId,
     };
+    console.log(data.message);
+    console.log(data.postId);
 
     try {
       const response = await fetch(
-        "https://blog-api-production-87f1.up.railway.app/login",
+        "https://blog-api-production-87f1.up.railway.app/comment/create",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
           },
           body: JSON.stringify(data),
         }
@@ -37,20 +38,14 @@ function CommentModal({ onClose }) {
       console.log(result);
 
       if (result.success) {
-        setMessage(result.msg);
-        setUser(result.user);
         setError(null);
-        localStorage.setItem("token", result.token);
-        localStorage.setItem("blogUser", JSON.stringify(result.user));
-        navigate("/");
+        // onClose();
       } else if (!result.success) {
         setError(result.message);
       } else {
-        setMessage(null);
         setError(result.message || "Server error, failed to logged user");
       }
     } catch (error) {
-      setMessage(null);
       console.log(error);
       setError("An error occurred. Please try again.");
     }
@@ -68,15 +63,13 @@ function CommentModal({ onClose }) {
         <form onSubmit={handleSubmit} className="blogForm">
           <div className="formGroup">
             <label htmlFor="message">Message</label>
-            <span
-              className="textarea"
-              role="textbox"
-              contentEditable
+            <textarea
               name="message"
-              id="username"
+              id="message"
               placeholder="This is your message"
-              minLength={10}
+              minLength={6}
               required
+              className="textarea"
             />
           </div>
           {error && <div className="errorMessage">° {error} :/</div>}

@@ -83,7 +83,10 @@ function PostDetail() {
         </div>
       </div>
       {showModal && user && (
-        <CommentModal onClose={() => setShowModal(false)}></CommentModal>
+        <CommentModal
+          onClose={() => setShowModal(false)}
+          postId={postId}
+        ></CommentModal>
       )}
     </div>
   );
