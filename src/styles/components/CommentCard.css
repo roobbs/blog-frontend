@@ -1,0 +1,18 @@
+.commentCard {
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+  color: rgb(0, 101, 134);
+}
+.commentText {
+  border-bottom: 1px solid grey;
+  color: black;
+}
+.commentDate {
+  color: rgb(60, 60, 60);
+  font-size: 0.8rem;
+  /* width: fit-content; */
+}
+.commentAuthor {
+  font-size: 0.8rem;
+}
