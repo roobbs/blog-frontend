@@ -7,6 +7,7 @@ import { MdArrowRightAlt } from "react-icons/md";
 import { UserContext } from "../App";
 import { useContext } from "react";
 import CommentModal from "../components/CommentModal";
+import CommentCard from "../components/CommentCard";
 
 function PostDetail() {
   const { postId } = useParams();
@@ -69,24 +70,35 @@ function PostDetail() {
         )}
       </div>
       <div className="postSidebar">
-        <Link to={"/posts"} className="postLink">
-          <div>See more posts</div>
-          <MdArrowRightAlt size={40} color="#09cca9" />
-        </Link>
-        {user && (
-          <div
-            className="postLink"
-            style={{ cursor: "pointer" }}
-            onClick={() => setShowModal(true)}
-          >
-            <div>{user.first_name}, agrega un comenario! </div>
+        <div className="postButtonsContainer">
+          <Link to={"/posts"} className="postLink">
+            <div>See more posts</div>
             <MdArrowRightAlt size={40} color="#09cca9" />
-          </div>
-        )}
+          </Link>
+          {user && (
+            <div
+              className="postLink"
+              style={{ cursor: "pointer" }}
+              onClick={() => setShowModal(true)}
+            >
+              <div>{user.first_name}, add a comment! </div>
+              <MdArrowRightAlt size={40} color="#09cca9" />
+            </div>
+          )}
+        </div>
 
         <div className="commentsContainer">
-          {comments.map((e, index) => index + " " + e.text)}
-          {comments.length === 0 && "there are no comments :/"}
+          {post && comments.length === 0 && "there are no comments :/"}
+          {post && comments.length > 0 && "Comments:"}
+          {!post && <div>wait...</div>}
+          {comments.map((c) => (
+            <CommentCard
+              key={c._id}
+              text={c.text}
+              author={c.author.username}
+              date={c.date}
+            />
+          ))}
         </div>
       </div>
       {showModal && user && (
