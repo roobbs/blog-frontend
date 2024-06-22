@@ -13,8 +13,13 @@ function PostDetail() {
   const [post, setPost] = useState(false);
   const [comments, setComments] = useState([]);
   const [error, setError] = useState(false);
+  const [update, setUpdate] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { user } = useContext(UserContext);
+
+  console.log("comments: ");
+  console.log(comments[0]);
+  console.log("finish");
 
   useEffect(() => {
     const fetchSinglePost = async () => {
@@ -25,6 +30,7 @@ function PostDetail() {
         const object = await res.json();
         console.log(object);
         setComments(object.comments);
+        console.log(object.comments);
         setPost(object.post);
       } catch (err) {
         setError(err);
@@ -32,7 +38,7 @@ function PostDetail() {
       }
     };
     fetchSinglePost();
-  }, [postId, showModal]);
+  }, [postId, update]);
 
   return (
     <div className="singlePostContainer">
@@ -78,14 +84,16 @@ function PostDetail() {
           </div>
         )}
 
-        <div>
-          {comments.lenght ? "There are comments" : "There are no comments yet"}
+        <div className="commentsContainer">
+          {comments.map((e, index) => index + " " + e.text)}
+          {comments.length === 0 && "there are no comments :/"}
         </div>
       </div>
       {showModal && user && (
         <CommentModal
           onClose={() => setShowModal(false)}
           postId={postId}
+          update={() => setUpdate(!update)}
         ></CommentModal>
       )}
     </div>

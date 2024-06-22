@@ -3,10 +3,7 @@ import { useState } from "react";
 import { MdArrowRightAlt } from "react-icons/md";
 import { IoMdCloseCircle } from "react-icons/io";
 
-// const token = localStorage.getItem("token");
-// console.log(token);
-
-function CommentModal({ onClose, postId }) {
+function CommentModal({ onClose, postId, update }) {
   const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
@@ -39,7 +36,8 @@ function CommentModal({ onClose, postId }) {
 
       if (result.success) {
         setError(null);
-        // onClose();
+        update();
+        onClose();
       } else if (!result.success) {
         setError(result.message);
       } else {
