@@ -57,7 +57,7 @@ function LogIn() {
 
   return (
     <main className="homeContainer">
-      <div className="welcome">
+      <div className="welcome welcomeForm">
         <div className="formTitle">Log In</div>
         <form onSubmit={handleSubmit} className="blogForm">
           <div className="formGroup">

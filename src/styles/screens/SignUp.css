@@ -73,3 +73,21 @@
   padding: 2px 10px;
   align-self: center;
 }
+
+@media (max-width: 1080px) {
+  .blogForm {
+    align-self: auto;
+    gap: 2rem;
+  }
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  .formGroup input {
+    width: 95%;
+  }
+  .welcomeForm {
+    gap: 1rem;
+    padding: 3rem 1rem;
+  }
+}

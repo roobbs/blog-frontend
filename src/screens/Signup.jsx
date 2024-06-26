@@ -71,7 +71,7 @@ function SignUp() {
 
   return (
     <main className="homeContainer">
-      <div className="welcome">
+      <div className="welcome welcomeForm">
         <div className="formTitle">Sign Up</div>
         <form onSubmit={handleSubmit} className="blogForm">
           <div className="formGroup">
