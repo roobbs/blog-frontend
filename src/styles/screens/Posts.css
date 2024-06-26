@@ -11,3 +11,12 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+
+@media (max-width: 1400px) {
+  .postsContainer {
+    padding: 4rem 2rem;
+  }
+  .postCardContainer {
+    gap: 3rem;
+  }
+}
