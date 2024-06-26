@@ -72,3 +72,50 @@
   letter-spacing: 6px;
   color: #85d6b1;
 }
+
+#check {
+  display: none;
+}
+.headerIcons {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 1rem;
+}
+@media (max-width: 780px) {
+  .headerIcons .closeIcon {
+    display: none;
+  }
+  .headerIcons {
+    display: inline-flex;
+  }
+  .headerItems {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: fit-content;
+    height: 0;
+    border-bottom-left-radius: 20px;
+    background-color: #070c1d;
+    border: 1px solid #00e0ff;
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+  #check:checked ~ .headerIcons .menuIcon {
+    display: none;
+  }
+  #check:checked ~ .headerIcons .closeIcon {
+    display: inline-flex;
+  }
+  #check:checked ~ .headerItems {
+    height: fit-content;
+    padding: 2rem 4rem;
+  }
+
+  /*/ /*/
+  .header1 {
+    padding: 0.4rem 2rem;
+  }
+}

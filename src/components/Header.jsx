@@ -8,6 +8,8 @@ import { IoGitMergeOutline } from "react-icons/io5";
 import { useContext } from "react";
 import { UserContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import { MdMenu } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 
 function Header() {
   const { user, handleLogout } = useContext(UserContext);
@@ -30,7 +32,14 @@ function Header() {
             <div style={{ color: "#00cca7", fontWeight: "900" }}>.BLOG</div>
           </div>
         </div>
-        <ul>
+
+        <input type="checkbox" id="check" />
+        <label htmlFor="check" className="headerIcons">
+          <MdMenu className="menuIcon" size={40} />
+          <IoClose className="closeIcon" size={40} />
+        </label>
+
+        <ul className="headerItems">
           <li title="Home">
             <Link to="/" className="headerIcon">
               <GoHomeFill size={24} />
