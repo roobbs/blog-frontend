@@ -1,7 +1,4 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@900;900&display=swap"); */
-.hola {
-  color: #cc5f00;
-}
 .header {
   color: rgb(255, 255, 255);
   z-index: 2;
@@ -82,6 +79,11 @@
   position: absolute;
   right: 1rem;
 }
+@media (max-width: 1400px) {
+  .header1 {
+    padding: 0.4rem 4rem;
+  }
+}
 @media (max-width: 780px) {
   .headerIcons .closeIcon {
     display: none;
@@ -116,6 +118,6 @@
 
   /*/ /*/
   .header1 {
-    padding: 0.4rem 2rem;
+    padding: 1rem 1rem;
   }
 }

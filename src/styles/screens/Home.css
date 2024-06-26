@@ -37,3 +37,31 @@
   color: white;
   background-color: #000319f8;
 }
+/* //  */
+@media (max-width: 1400px) {
+  .homeContainer {
+    padding: 2rem 8rem;
+  }
+}
+@media (max-width: 1050px) {
+  .homeContainer {
+    padding: 2rem 8rem;
+  }
+}
+@media (max-width: 900px) {
+  .homeContainer {
+    padding: 2rem 6rem;
+  }
+  .welcome {
+    padding: 6rem 3rem;
+    gap: 3rem;
+  }
+}
+@media (max-width: 780px) {
+  .homeContainer {
+    padding: 4rem 1rem;
+  }
+  .welcome {
+    padding: 5rem 2rem;
+  }
+}
