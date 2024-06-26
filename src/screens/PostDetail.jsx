@@ -59,7 +59,10 @@ function PostDetail() {
               <div className="label">{post.label}</div>
             </div>
             <div className="postTitle">{post.title}</div>
-            <div dangerouslySetInnerHTML={{ __html: post.text }}></div>
+            <div
+              className="postText"
+              dangerouslySetInnerHTML={{ __html: post.text }}
+            ></div>
             <div className="postAuthor">
               {post.author.first_name + " " + post.author.last_name}
             </div>

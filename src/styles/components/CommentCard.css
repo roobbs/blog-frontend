@@ -3,10 +3,14 @@
   padding: 10px;
   border-radius: 6px;
   color: rgb(0, 101, 134);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .commentText {
   border-bottom: 1px solid grey;
   color: black;
+  padding: 0.5rem 0;
 }
 .commentDate {
   color: rgb(60, 60, 60);
